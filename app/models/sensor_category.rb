@@ -1,0 +1,2 @@
+class SensorCategory < ApplicationRecord
+end
