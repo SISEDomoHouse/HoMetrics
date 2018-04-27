@@ -10,11 +10,14 @@ class HousesController < ApplicationController
   # GET /houses/1
   # GET /houses/1.json
   def show
+    @rooms = @house.rooms
   end
 
   # GET /houses/new
   def new
     @house = House.new
+    @rooms = @house.rooms
+    @users = @house.users
   end
 
   # GET /houses/1/edit

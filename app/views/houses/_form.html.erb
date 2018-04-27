@@ -11,17 +11,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :house_address %>
+  <div class="center">
+    <div class="field center-element">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :house_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address, id: :house_address %>
+    </div>
+
+    <div class="field">
+      <%= form.label :stratum %>
+      <%= form.text_field :stratum, id: :house_stratum %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :stratum %>
-    <%= form.text_field :stratum, id: :house_stratum %>
+  <div class="center">
+    <h2>Cuartos</h2>
+    <table>
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <td><%= room.name %></td>
+         </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'New Room', new_room_path %>
+  </div>
+  <br>
+  <div class="center">
+    <h2>Miembros</h2>
+    <table>
+      <tbody>
+        <% @users.each do |room| %>
+          <tr>
+            <td><%= room.name %></td>
+         </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%# crear membresia %>
+    <%# <%= link_to 'New', new_membership_path %> %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Siguiente" %>
   </div>
 <% end %>
