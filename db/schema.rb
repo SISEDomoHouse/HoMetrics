@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420000139) do
+ActiveRecord::Schema.define(version: 20180427004238) do
 
   create_table "actuators", force: :cascade do |t|
     t.boolean "state"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180420000139) do
     t.string "stratum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "memberships", force: :cascade do |t|
