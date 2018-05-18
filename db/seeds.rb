@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'time'
 5.times do
 	House.create name: Faker::GameOfThrones.house,
 				 address: Faker::Address.street_address,
@@ -29,10 +29,16 @@ SensorCategory.create name: "Luminosidad",
 					house_id: house+1
 
 		2.times do
-			Sensor.create name: Faker::Commerce.product_name,
+			s =Sensor.create name: Faker::Commerce.product_name,
 						  room_id: r.id,
 						  comment: Faker::VForVendetta.quote,
 						  sensor_category_id: rand(1..3)
+
+			(Date.today - 370..Date.today).each do |day|
+			  Value.create value: rand(0..50),
+			  			   sensor_id: s.id,
+			  			   created_at: day
+			end
 		end
 	end
 end
