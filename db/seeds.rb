@@ -35,7 +35,7 @@ SensorCategory.create name: "Luminosidad",
 						  sensor_category_id: rand(1..3)
 
 			(Date.today - 370..Date.today).each do |day|
-			  Value.create value: rand(0..50),
+			  Value.create value: rand(0..50)*(room+1),
 			  			   sensor_id: s.id,
 			  			   created_at: day
 			end
