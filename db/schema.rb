@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427004238) do
+ActiveRecord::Schema.define(version: 20180525003152) do
 
   create_table "actuators", force: :cascade do |t|
-    t.integer "node_id"
     t.boolean "state"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "room_id"
-    t.index ["node_id"], name: "index_actuators_on_node_id"
     t.index ["room_id"], name: "index_actuators_on_room_id"
   end
 
