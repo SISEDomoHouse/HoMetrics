@@ -22,6 +22,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1/edit
   def edit
+    @users = @house.users
   end
 
   # POST /houses
@@ -45,7 +46,7 @@ class HousesController < ApplicationController
   def update
     respond_to do |format|
       if @house.update(house_params)
-        format.html { redirect_to @house, notice: 'House was successfully updated.' }
+        format.html {  redirect_to house_house_steps_path(@house), notice: 'House was successfully updated.' }
         format.json { render :show, status: :ok, location: @house }
       else
         format.html { render :edit }

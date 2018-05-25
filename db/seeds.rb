@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# House.find(1).rooms.create(name:"room1")
+# House.find(1).rooms.last.sensors.create(name:"sensor1")
